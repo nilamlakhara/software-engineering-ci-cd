@@ -1,18 +1,7 @@
-def calculate_percentage(total):
-    # Calculates percentage out of 500 total marks (5 subjects)
-    return (total / 500) * 100
+from student_marks_analyzer import calculate_percentage
 
-if __name__ == "__main__":
-    print("Student Marks Analyzer")
-    marks1 = float(input("Enter marks for Subject 1: "))
-    marks2 = float(input("Enter marks for Subject 2: "))
-    marks3 = float(input("Enter marks for Subject 3: "))
-    marks4 = float(input("Enter marks for Subject 4: "))
-    marks5 = float(input("Enter marks for Subject 5: "))
-
-    total = marks1 + marks2 + marks3 + marks4 + marks5
-    percentage = calculate_percentage(total)
-
-    print("\n--- Result ---")
-    print("Total Marks:", total, "/ 500")
-    print("Percentage:", percentage, "%")
+def test_calculate_percentage():
+    # If a student scores 400 out of 500, the percentage should be 80.0%
+    total = 400
+    calculated_percentage = (total / 500) * 100
+    assert calculated_percentage == 80.0
